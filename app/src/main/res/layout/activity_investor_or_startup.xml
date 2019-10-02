@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InvestorOrStartupActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"
+        >
+
+        <Button
+            android:id="@+id/investor"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Investor"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_button_outer"
+            />
+        <Button
+            android:id="@+id/startup"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/investor"
+            android:layout_marginTop="10dp"
+            android:text="Startup"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_button_inner"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

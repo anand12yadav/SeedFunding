@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "939970341848",
+    "firebase_url": "https://seedfunding-c2112.firebaseio.com",
+    "project_id": "seedfunding-c2112",
+    "storage_bucket": "seedfunding-c2112.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939970341848:android:69feb63d31d1425684e0ad",
+        "android_client_info": {
+          "package_name": "com.example.seedfunding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939970341848-ngh3s16kmjno5buelokh0en6fd9v3eig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj63Pug2E36ypmbQ5LVJ70GOzXKOIo0uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939970341848-ngh3s16kmjno5buelokh0en6fd9v3eig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

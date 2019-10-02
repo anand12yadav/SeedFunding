@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartupInfoSetupActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/startupProfileImage"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+
+    <EditText
+        android:id="@+id/startupName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Startup Name"
+        android:layout_below="@id/startupProfileImage"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/txtceoCofounder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startupName"
+        android:text="CEO/Founder/Co-founder"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/foundersName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="CEO/Founder/Co-founder"
+        android:layout_below="@id/txtceoCofounder"/>
+
+    <TextView
+        android:id="@+id/txtTeamMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/foundersName"
+        android:text="Team members"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/teamMember1"
+        android:layout_below="@id/txtTeamMembers"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Team Member 1"/>
+    <EditText
+        android:id="@+id/teamMember2"
+        android:layout_below="@id/teamMember1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Team Member 2"/>
+    <EditText
+        android:id="@+id/teamMember3"
+        android:layout_below="@id/teamMember2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Team Member 3"/>
+    <EditText
+        android:id="@+id/teamMember4"
+        android:layout_below="@id/teamMember3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Team Member 4"/>
+    <EditText
+        android:id="@+id/teamMember5"
+        android:layout_below="@id/teamMember4"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Team Member 5"/>
+
+    <TextView
+        android:id="@+id/txtStartupSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamMember5"
+        android:text="Startup Summary "
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/StartupSummary"
+        android:layout_below="@id/txtStartupSummary"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:hint="Write about your startup here..."
+        android:textAlignment="textStart"/>
+    </RelativeLayout>
+
+</ScrollView>
