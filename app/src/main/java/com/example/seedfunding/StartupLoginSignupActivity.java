@@ -198,6 +198,9 @@ public class StartupLoginSignupActivity extends AppCompatActivity {
                                             public void onSuccess(Void aVoid) {
                                                 // Snackbar.make(rootlayout, "Register Successful", Snackbar.LENGTH_SHORT)
                                                 //       .show();
+                                                Intent intent = new Intent(StartupLoginSignupActivity.this, StartupInfoSetupActivity.class);
+                                                startActivity(intent);
+                                                finish();
                                                 Toast.makeText(getApplicationContext(),"successful",Toast.LENGTH_SHORT).show();
                                             }
                                         })

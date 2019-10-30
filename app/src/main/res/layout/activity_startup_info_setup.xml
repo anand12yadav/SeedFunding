@@ -16,21 +16,58 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
-
-
+        android:layout_marginTop="10dp"
+        android:background="@drawable/a"/>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:id="@+id/addphoto"
+            android:layout_below="@id/startupProfileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add photo"
+            android:textStyle="bold"
+            android:textSize="15dp"/>
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startupProfileImage"
+        android:layout_marginLeft="20dp"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:id="@+id/txtStartupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Startup Name"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
     <EditText
+        android:layout_below="@id/txtStartupName"
         android:id="@+id/startupName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Startup Name"
-        android:layout_below="@id/startupProfileImage"
-        android:layout_marginTop="20dp"/>
+        />
+        <TextView
+            android:id="@+id/txtstartupDomain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/startupName"
+            android:text="Startup Domain"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/startupDomain"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Startup Domain"
+            android:layout_below="@id/txtstartupDomain"/>
     <TextView
         android:id="@+id/txtceoCofounder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/startupName"
+        android:layout_below="@id/startupDomain"
         android:text="CEO/Founder/Co-founder"
         android:textStyle="bold"
         android:textSize="20sp"/>
@@ -90,13 +127,29 @@
         android:textStyle="bold"
         android:textSize="20sp"/>
 
-    <EditText
-        android:id="@+id/StartupSummary"
-        android:layout_below="@id/txtStartupSummary"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:hint="Write about your startup here..."
-        android:textAlignment="textStart"/>
+        <EditText
+            android:id="@+id/StartupSummary"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/txtStartupSummary"
+            android:layout_marginTop="10dp"
+            android:hint="Write about your startup here..."
+            android:textAlignment="textStart" />
+
+        <Button
+            android:layout_below="@id/StartupSummary"
+            android:id="@+id/saveStartupInfo"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Save Info"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_button_outer"
+            />
+    </RelativeLayout>
+
     </RelativeLayout>
 
 </ScrollView>
