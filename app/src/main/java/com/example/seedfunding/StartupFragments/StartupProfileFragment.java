@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.seedfunding.R;
 import com.example.seedfunding.StartupModel.Startup_upload;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -31,9 +34,11 @@ public class StartupProfileFragment extends Fragment {
 
      CircleImageView startupProfileImage;
      TextView startupName,foundersName,teamMember1,teamMember2,teamMember3,teamMember4,teamMember5,StartupSummary,txtstartupDomain;
-FirebaseAuth mAuth;
+     FirebaseAuth mAuth;
      Uri mImageUrl;
      DatabaseReference mDatabaseRef;
+     FirebaseStorage storage;
+     StorageReference storageReference;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,16 +55,21 @@ FirebaseAuth mAuth;
         StartupSummary=view.findViewById(R.id.StartupSummary);
         txtstartupDomain=view.findViewById(R.id.txtstartupDomain);
         mAuth=FirebaseAuth.getInstance();
+       // storage=FirebaseStorage.getInstance();
+       // storageReference= FirebaseStorage.getInstance().getReference("gs://seedfunding-c2112.appspot.com/Startups");
 
 
-         String currentUserId = mAuth.getCurrentUser().getUid();
+
+
+        String currentUserId = mAuth.getCurrentUser().getUid();
          mDatabaseRef= FirebaseDatabase.getInstance().getReference().child("Startups").child(currentUserId);
          mDatabaseRef.addValueEventListener(new ValueEventListener() {
              @Override
              public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                  Startup_upload startup_upload=dataSnapshot.getValue(Startup_upload.class);
                  //  startup_upload.setStartupName(dataSnapshot.child("Startups").getValue(Startup_upload.class).getStartupName());
-                 //  String startupProfileImage1 = dataSnapshot.child("mImageUrl").getValue().toString();
+                 // String startupProfileImage1 = dataSnapshot.child("mImageUrl").getValue().toString();
+              //   Startup_upload profileImage = dataSnapshot.getValue(Startup_upload.class);
                  String startupName1=startup_upload.getStartupName();
                  String foundersName1=startup_upload.getFoundersName();
                  String teamMember11=startup_upload.getTeamMember1();
@@ -72,7 +82,8 @@ FirebaseAuth mAuth;
 
 
 
-               //  Picasso.get().load(startupProfileImage1).into(startupProfileImage);
+                // Picasso.get().load(startupProfileImage1).into(startupProfileImage);
+               //  Glide.with(getContext()).load(profileImage.getmImageUrl()).into(startupProfileImage);
                  foundersName.setText(foundersName1);
                  txtstartupDomain.setText(txtstartupDomain1);
                  startupName.setText(startupName1);

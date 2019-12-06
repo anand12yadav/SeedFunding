@@ -1,31 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InvestorInfoSetupActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Investment domain"
-        />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint=""
-        />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Investment domain"
-        />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Investment domain"
-        />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/investorProfileImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/m"/>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:id="@+id/addphoto"
+            android:layout_below="@id/investorProfileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add photo"
+            android:textStyle="bold"
+            android:textSize="15dp"/>
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/investorProfileImage"
+            android:layout_marginLeft="20dp"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/txtInvestorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtInvestorName"
+                android:id="@+id/InvestorName"
+                android:layout_width="300dp"
+                android:hint="Your Name"
+                />
+            <TextView
+                android:id="@+id/txtInvestorAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/InvestorName"
+                android:text="About"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/InvestorAbout"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Write about yourself"
+                android:layout_below="@id/txtInvestorAbout"/>
+            <TextView
+                android:id="@+id/txtInvestorExperience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/InvestorAbout"
+                android:text="Experience"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/InvestorExperience"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Write about your experience in startup industry "
+                android:layout_below="@id/txtInvestorExperience"/>
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/txtInvestorEducation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/InvestorExperience"
+                android:text="Education"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:id="@+id/InvestorEducation"
+                android:layout_below="@id/txtInvestorEducation"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Mention your highest level of education "/>
+
+            <TextView
+                android:id="@+id/txtInvestorDomain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/InvestorEducation"
+                android:text="Investment Domain "
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:id="@+id/InvestorDomain"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtInvestorDomain"
+                android:layout_marginTop="10dp"
+                android:hint="Mention investment domain"
+                android:textAlignment="textStart" />
+
+            <TextView
+                android:id="@+id/txtInvestorBudget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/InvestorDomain"
+                android:text="Investment Budget"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:id="@+id/InvestorBudget"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtInvestorBudget"
+                android:layout_marginTop="10dp"
+                android:hint="Enter your max budget"
+                android:textAlignment="textStart" />
+
+            <Button
+                android:layout_below="@id/InvestorBudget"
+                android:id="@+id/saveInvestorInfo"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Save Info"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/round_button_outer"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

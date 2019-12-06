@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.seedfunding.InvestorModel.Investor_user;
+import com.example.seedfunding.StartupModel.Startup_user;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -36,7 +37,7 @@ public class StartupLoginSignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_startup_login_signup);
 
         Startup_login = findViewById(R.id.startup_login);
-         Startup_signup= findViewById(R.id.startup_signup);
+        Startup_signup= findViewById(R.id.startup_signup);
         rootlayout = findViewById(R.id.rootlayout);
 
         auth = FirebaseAuth.getInstance();
@@ -185,7 +186,8 @@ public class StartupLoginSignupActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(AuthResult authResult) {
                                 // saving investor(user) to database using model class
-                                Investor_user user = new Investor_user();
+                               // Investor_user user = new Investor_user();
+                                Startup_user user=new Startup_user();
                                 user.setEmail(startup_email.getText().toString());
                                 user.setPassword(startup_password.getText().toString());
                                 user.setName(startup_name.getText().toString());

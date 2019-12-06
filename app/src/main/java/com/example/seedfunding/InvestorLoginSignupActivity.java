@@ -201,6 +201,9 @@ public class InvestorLoginSignupActivity extends AppCompatActivity {
                                             public void onSuccess(Void aVoid) {
                                                // Snackbar.make(rootlayout, "Register Successful", Snackbar.LENGTH_SHORT)
                                                  //       .show();
+                                                Intent intent = new Intent(InvestorLoginSignupActivity.this, InvestorInfoSetupActivity.class);
+                                                startActivity(intent);
+                                                finish();
                                                 Toast.makeText(getApplicationContext(),"successful",Toast.LENGTH_SHORT).show();
                                             }
                                         })
