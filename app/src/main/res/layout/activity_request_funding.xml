@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RequestFundingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/startupProfileImage"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/m"/>
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startupProfileImage"
+        android:layout_marginLeft="20dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/txtboldInvestorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pravin Sanghavi"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/fundBtn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtboldInvestorName"
+            android:layout_marginTop="10dp"
+            android:text="Request Funding"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:background="@drawable/round_button_inner"/>
+        <TextView
+            android:id="@+id/about"
+            android:layout_below="@id/fundBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/bdgt"
+            android:layout_below="@id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Budget : 330k - 1Mn"
+            android:layout_marginLeft="10dp"
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"
+           />
+
+        <TextView
+            android:id="@+id/domain"
+            android:layout_below="@id/bdgt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Domain : Machine Learning"
+            android:layout_marginLeft="10dp"
+            android:textSize="22sp"
+            />
+        <TextView
+            android:id="@+id/exp"
+            android:layout_below="@id/domain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Experience"
+            android:layout_marginLeft="10dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/expinfo"
+            android:layout_below="@id/exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mentor and advisor at evangalist from 2014"
+            android:layout_marginLeft="10dp"
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/expinfo1"
+            android:layout_below="@id/expinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="invested in sufit.ai"
+            android:layout_marginLeft="10dp"
+            android:textSize="22sp"
+            />
+
+        <TextView
+            android:id="@+id/web"
+            android:layout_below="@id/expinfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Websites"
+            android:layout_marginLeft="10dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/web1"
+            android:layout_below="@id/web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.sufit.ai"
+            android:layout_marginLeft="10dp"
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/web2"
+            android:layout_below="@id/web1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.evangalist.com"
+            android:layout_marginLeft="10dp"
+            android:textSize="22sp"
+
+
+            />
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
