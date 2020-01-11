@@ -44,6 +44,14 @@ public class investorAdapter extends RecyclerView.Adapter<investorAdapter.MyView
             public void onClick(View view) {
                 Intent intent=new Intent(context, SendFundingInterestActivity.class);
                 intent.putExtra("StartupName",startup_upload.get(i).getStartupName());
+                intent.putExtra("StartupDomain",startup_upload.get(i).getstartupDomain());
+                intent.putExtra("FoundersName",startup_upload.get(i).getFoundersName());
+                intent.putExtra("TeamMember1",startup_upload.get(i).getTeamMember1());
+                intent.putExtra("TeamMember2",startup_upload.get(i).getTeamMember2());
+                intent.putExtra("TeamMember3",startup_upload.get(i).getTeamMember3());
+                intent.putExtra("TeamMember4",startup_upload.get(i).getTeamMember4());
+                intent.putExtra("TeamMember5",startup_upload.get(i).getTeamMember5());
+                intent.putExtra("StartupSummary",startup_upload.get(i).getStartupSummary());
                 context.startActivity(intent);
             }
         });
