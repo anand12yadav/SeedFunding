@@ -14,15 +14,20 @@ import com.example.seedfunding.InvestorModel.Investor_upload;
 import com.example.seedfunding.R;
 import com.example.seedfunding.RequestFundingActivity;
 import com.example.seedfunding.SendFundingInterestActivity;
+import com.example.seedfunding.StartupModel.Startup_upload;
 
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static android.media.CamcorderProfile.get;
+
 public class startupAdapter extends RecyclerView.Adapter<startupAdapter.MyViewHolder> {
 
  Context context;
  ArrayList<Investor_upload> investor_upload;
+   // ArrayList<Startup_upload> startup_upload;
+
 
     public startupAdapter(Context context, ArrayList<Investor_upload> investor_upload) {
         this.context = context;
@@ -37,6 +42,9 @@ public class startupAdapter extends RecyclerView.Adapter<startupAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
+
+        final Investor_upload user = investor_upload.get(i);
+
         myViewHolder.investor_name.setText(investor_upload.get(i).getInvestorName());
         myViewHolder.investor_domain.setText(investor_upload.get(i).getInvestorDomain());
         myViewHolder.view_information_investor.setOnClickListener(new View.OnClickListener() {
@@ -49,9 +57,23 @@ public class startupAdapter extends RecyclerView.Adapter<startupAdapter.MyViewHo
                 intent.putExtra("InvestorBudget",investor_upload.get(i).getInvestorBudget());
                 intent.putExtra("InvestorEducation",investor_upload.get(i).getInvestorEducation());
                 intent.putExtra("InvestorExperience",investor_upload.get(i).getInvestorExperience());
+                intent.putExtra("currentInvestorUserId",user.getInvestorId());
+                context.startActivity(intent);
+
+
+
+            }
+        });
+
+        /**myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,SendFundingInterestActivity.class);
+                intent.putExtra("currentStartupUserId",user.getStartupId());
                 context.startActivity(intent);
             }
         });
+         **/
     }
 
     @Override
@@ -74,4 +96,5 @@ public class startupAdapter extends RecyclerView.Adapter<startupAdapter.MyViewHo
             view_information_investor= itemView.findViewById(R.id.view_investor_information);
         }
     }
+
 }

@@ -27,6 +27,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class InvestorInfoSetupActivity extends AppCompatActivity {
@@ -117,10 +119,14 @@ public class InvestorInfoSetupActivity extends AppCompatActivity {
                                 String currentUserId = mAuth.getCurrentUser().getUid();
                                 Toast.makeText(InvestorInfoSetupActivity.this, "Success", Toast.LENGTH_SHORT).show();
                                 Investor_upload Investor_upload = new Investor_upload(InvestorName.getText().toString().trim(), InvestorAbout.getText().toString().trim(),
-                                        InvestorExperience.getText().toString().trim(), InvestorBudget.getText().toString().trim(), InvestorEducation.getText().toString().trim()
-                                        , InvestorDomain.getText().toString().trim(), taskSnapshot.getMetadata().toString());
+                                        InvestorExperience.getText().toString().trim(), InvestorEducation.getText().toString().trim(), InvestorDomain.getText().toString().trim(),
+                                        InvestorBudget.getText().toString().trim(), taskSnapshot.getMetadata().toString());
                                 //  String startup_uploadID=mDatabaseRef.push().getKey();
                                 mDatabaseRef.child(currentUserId).setValue(Investor_upload);
+
+                                HashMap<String,Object> hashMap=new HashMap<>();
+                                hashMap.put("currentInvestorUserId",currentUserId);
+                                mDatabaseRef.child(currentUserId).push().setValue(hashMap);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

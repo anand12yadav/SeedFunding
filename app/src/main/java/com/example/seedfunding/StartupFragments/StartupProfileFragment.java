@@ -79,10 +79,10 @@ public class StartupProfileFragment extends Fragment {
                  String teamMember55=startup_upload.getTeamMember5();
                  String StartupSummary1=startup_upload.getStartupSummary();
                  String txtstartupDomain1=startup_upload.getstartupDomain();
+                // String link=dataSnapshot.getValue(String.class);
 
 
-
-                // Picasso.get().load(startupProfileImage1).into(startupProfileImage);
+                // Picasso.get().load(link).into(startupProfileImage);
                //  Glide.with(getContext()).load(profileImage.getmImageUrl()).into(startupProfileImage);
                  foundersName.setText(foundersName1);
                  txtstartupDomain.setText(txtstartupDomain1);

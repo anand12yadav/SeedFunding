@@ -101,7 +101,7 @@ public class StartupLoginSignupActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Please enter password greater than 6 digits",Toast.LENGTH_SHORT).show();
                 }
 
-                //login Investor to main screen
+                //login startup to main screen
                 auth.signInWithEmailAndPassword(startup_email.getText().toString(), startup_password.getText().toString())
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override

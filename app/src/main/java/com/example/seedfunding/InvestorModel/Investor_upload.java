@@ -3,6 +3,7 @@ package com.example.seedfunding.InvestorModel;
 public class Investor_upload {
     private String InvestorName,InvestorAbout,InvestorExperience,InvestorEducation,InvestorDomain,InvestorBudget;
     private String mInvestorImageUrl;
+    private String investorId;
 
     public Investor_upload() {
     }
@@ -15,6 +16,14 @@ public class Investor_upload {
         InvestorDomain = investorDomain;
         InvestorBudget = investorBudget;
         this.mInvestorImageUrl = mInvestorImageUrl;
+    }
+
+    public String getInvestorId() {
+        return investorId;
+    }
+
+    public void setInvestorId(String investorId) {
+        this.investorId = investorId;
     }
 
     public String getInvestorName() {

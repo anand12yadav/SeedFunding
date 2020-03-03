@@ -16,38 +16,40 @@
         android:layout_marginRight="20dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:id="@+id/investor_profile_image"
             android:background="@drawable/abcd"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="25dp"/>
 
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:id="@+id/investor_name"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_marginTop="40dp"
-            android:layout_marginLeft="135dp"
+            android:layout_marginLeft="120dp"
             />
 
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:id="@+id/investor_domain"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_marginTop="80dp"
-            android:layout_marginLeft="135dp"/>
+            android:layout_marginLeft="120dp"/>
 
         <Button
             android:id="@+id/view_investor_information"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="290dp"
+            android:layout_marginLeft="245dp"
             android:layout_marginTop="55dp"
             android:textSize="15sp"
             android:text="View"
+            android:background="@drawable/round_button_inner"
+            android:textColor="#fff"
             />
 
     </android.support.v7.widget.CardView>

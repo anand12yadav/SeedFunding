@@ -4,6 +4,7 @@ public class Startup_upload {
 
     private String startupName,foundersName,teamMember1,teamMember2,teamMember3,teamMember4,teamMember5,StartupSummary,startupDomain;
     private String mImageUrl;
+    private String startupId;
 
     public Startup_upload() {
     }
@@ -20,6 +21,15 @@ public class Startup_upload {
         this.StartupSummary=startupSummary;
         this.startupDomain=startupDomain;
         this.mImageUrl = mImageUrl;
+
+    }
+
+    public String getStartupId() {
+        return startupId;
+    }
+
+    public void setStartupId(String startupId) {
+        this.startupId = startupId;
     }
 
     public String getStartupName() {
@@ -101,4 +111,6 @@ public class Startup_upload {
     public void setstartupDomain(String startupDomain) {
         this.startupDomain = startupDomain;
     }
+
+
 }

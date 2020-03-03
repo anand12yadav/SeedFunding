@@ -25,7 +25,7 @@
 
             <Button
                 android:id="@+id/sendFundingRequest"
-                android:layout_width="300dp"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/InvestorProfileImage"
                 android:layout_marginTop="10dp"

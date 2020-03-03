@@ -60,6 +60,7 @@ public class InvestorHomeFragment extends Fragment {
                 for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren())
                 {
                     Startup_upload startup_upload=dataSnapshot1.getValue(Startup_upload.class);
+                    startup_upload.setStartupId(dataSnapshot1.getKey());
                     list.add(startup_upload);
                 }
                 adapter=new investorAdapter(getContext(),list);

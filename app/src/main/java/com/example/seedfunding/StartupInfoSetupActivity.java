@@ -15,8 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.seedfunding.StartupModel.Startup_upload;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -25,6 +27,8 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -36,7 +40,7 @@ public class StartupInfoSetupActivity extends AppCompatActivity {
     TextView addphoto;
     private Button saveStartupInfo;
     private EditText startupName,foundersName,teamMember1,teamMember2,teamMember3,teamMember4,teamMember5,StartupSummary,startupDomain;
-
+    // String startupId;
     private Uri mImageUrl;
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
@@ -61,6 +65,12 @@ public class StartupInfoSetupActivity extends AppCompatActivity {
                 StartupSummary=findViewById(R.id.StartupSummary);
                 mAuth=FirebaseAuth.getInstance();
 
+                String currentStartupUserId = mAuth.getCurrentUser().getUid();
+                Intent intent=new Intent(StartupInfoSetupActivity.this,SendFundingInterestActivity.class);
+                intent.putExtra("currentStartupUserId",currentStartupUserId);
+                startActivity(intent);
+
+
 
                 mStorageRef= FirebaseStorage.getInstance().getReference("Startups");
                 mDatabaseRef= FirebaseDatabase.getInstance().getReference("Startups");
@@ -76,9 +86,10 @@ public class StartupInfoSetupActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                          uploadStartupInfo();
-                         Intent intent=new Intent(StartupInfoSetupActivity.this,StartupLoginSignupActivity.class);
-                         startActivity(intent);
-                         finish();
+                        Intent intent=new Intent(StartupInfoSetupActivity.this,StartupLoginSignupActivity.class);
+                        startActivity(intent);
+                        finish();
+
                     }
                 });
     }
@@ -119,10 +130,21 @@ public class StartupInfoSetupActivity extends AppCompatActivity {
                           Toast.makeText(StartupInfoSetupActivity.this,"Success",Toast.LENGTH_SHORT).show();
                           Startup_upload startup_upload=new Startup_upload(startupName.getText().toString().trim(),foundersName.getText().toString().trim(),
                                   teamMember1.getText().toString().trim(),teamMember2.getText().toString().trim(),teamMember3.getText().toString().trim()
-                                  ,teamMember4.getText().toString().trim(),teamMember5.getText().toString().trim(),startupDomain.getText().toString().trim(),StartupSummary.getText().toString().trim()
+                                  ,teamMember4.getText().toString().trim(),teamMember5.getText().toString().trim(),StartupSummary.getText().toString().trim(),startupDomain.getText().toString().trim()
                           ,taskSnapshot.getMetadata().toString());
-                        //  String startup_uploadID=mDatabaseRef.push().getKey();
+
                           mDatabaseRef.child(currentUserId).setValue(startup_upload);
+
+                      //    HashMap<String,Object> hashMap=new HashMap<>();
+                     //     hashMap.put("currentStartupUserId",currentUserId);
+                      //    mDatabaseRef.child(currentUserId).push().setValue(hashMap);
+
+                         Intent intent=new Intent(StartupInfoSetupActivity.this,SendFundingInterestActivity.class);
+                          intent.putExtra("currentStartupUserId",currentUserId);
+                          startActivity(intent);
+
+
+
                       }
                   })
                   .addOnFailureListener(new OnFailureListener() {
@@ -140,5 +162,36 @@ public class StartupInfoSetupActivity extends AppCompatActivity {
        }else {
            Toast.makeText(this,"Add Profile Image",Toast.LENGTH_SHORT).show();
        }
+
+
+      /**  String currentUserId = mAuth.getCurrentUser().getUid();
+        mDatabaseRef= FirebaseDatabase.getInstance().getReference("Startups").child(currentUserId);
+        HashMap<String,String> hashMap=new HashMap<>();
+        hashMap.put("startupName",startupName.getText().toString());
+        hashMap.put("foundersName",foundersName.getText().toString());
+        hashMap.put("teamMember1",teamMember1.getText().toString());
+        hashMap.put("teamMember2",teamMember2.getText().toString());
+        hashMap.put("teamMember3",teamMember3.getText().toString());
+        hashMap.put("teamMember4",teamMember4.getText().toString());
+        hashMap.put("teamMember5",teamMember5.getText().toString());
+        hashMap.put("StartupSummary",StartupSummary.getText().toString());
+        hashMap.put("StartupDomain",startupDomain.getText().toString());
+        hashMap.put("mImageUrl","default");
+        hashMap.put("startupId",currentUserId);
+
+
+        mDatabaseRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Intent intent=new Intent(StartupInfoSetupActivity.this,StartupLoginSignupActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+       **/
+
+
     }
 }

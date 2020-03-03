@@ -36,7 +36,7 @@ public class investorAdapter extends RecyclerView.Adapter<investorAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
-
+        final Startup_upload user=startup_upload.get(i);
         myViewHolder.startup_name.setText(startup_upload.get(i).getStartupName());
         myViewHolder.startup_domain.setText(startup_upload.get(i).getstartupDomain());
         myViewHolder.view_information.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +52,11 @@ public class investorAdapter extends RecyclerView.Adapter<investorAdapter.MyView
                 intent.putExtra("TeamMember4",startup_upload.get(i).getTeamMember4());
                 intent.putExtra("TeamMember5",startup_upload.get(i).getTeamMember5());
                 intent.putExtra("StartupSummary",startup_upload.get(i).getStartupSummary());
+                intent.putExtra("currentStartupUserId",user.getStartupId());
                 context.startActivity(intent);
+
+
+
             }
         });
 
