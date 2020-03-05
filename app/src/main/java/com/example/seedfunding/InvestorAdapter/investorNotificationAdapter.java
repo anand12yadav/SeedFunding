@@ -1,6 +1,7 @@
 package com.example.seedfunding.InvestorAdapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.ReceiverCallNotAllowedException;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,10 @@ import android.widget.TextView;
 
 import com.example.seedfunding.InvestorModel.InvestorNotificationModel;
 import com.example.seedfunding.R;
+import com.example.seedfunding.SendFundingInterestActivity;
+import com.example.seedfunding.ShowInvestorProfileFromNotificationActivity;
+import com.example.seedfunding.ShowStartupProfileFromNotificationActivity;
+import com.example.seedfunding.StartupModel.StartupNotificationModel;
 
 import org.w3c.dom.Text;
 
@@ -34,8 +39,22 @@ public class investorNotificationAdapter extends RecyclerView.Adapter<investorNo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        InvestorNotificationModel Model=investorNotificationModel.get(i);
+        final InvestorNotificationModel Model=investorNotificationModel.get(i);
         viewHolder.investor_notification_msg.setText(Model.getMessage());
+
+      viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              //  Intent intent=new Intent(mContext, ShowStartupProfileFromNotificationActivity.class);
+              //  intent.putExtra("currentStartupReceiverId",Model.getReceiver());
+              //  mContext.startActivity(intent);
+                Intent intent=new Intent(mContext, ShowStartupProfileFromNotificationActivity.class);
+                intent.putExtra("currentStartupReceiverId",Model.getSender());
+                mContext.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override

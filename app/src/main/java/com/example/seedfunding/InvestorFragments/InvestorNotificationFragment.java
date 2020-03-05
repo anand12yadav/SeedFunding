@@ -59,6 +59,8 @@ public class InvestorNotificationFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 investorNotificationModel.clear();
                 InvestorNotificationModel model= dataSnapshot.getValue(InvestorNotificationModel.class);
+              //  model.setSender(dataSnapshot.getKey());
+               // model.setReceiver(dataSnapshot.getKey());
                 investorNotificationModel.add(model);
 
 

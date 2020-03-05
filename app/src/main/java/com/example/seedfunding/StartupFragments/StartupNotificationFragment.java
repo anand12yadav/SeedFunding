@@ -59,6 +59,8 @@ public class StartupNotificationFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 startupNotificationModel.clear();
                 StartupNotificationModel model= dataSnapshot.getValue(StartupNotificationModel.class);
+              //  model.setSender(dataSnapshot.getKey());
+               // model.setReceiver(dataSnapshot.getKey());
                 startupNotificationModel.add(model);
 
 

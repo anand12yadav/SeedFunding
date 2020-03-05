@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowInvestorProfileFromNotificationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/InvestorProfileImage"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/m"/>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/InvestorProfileImage"
+                android:layout_marginLeft="20dp"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/txtInvestorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Investor Name"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_below="@id/txtInvestorName"
+                    android:id="@+id/InvestorName"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Investor Name"
+                    />
+                <TextView
+                    android:layout_below="@id/InvestorName"
+                    android:id="@+id/txtInvestorAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_below="@id/txtInvestorAbout"
+                    android:id="@+id/InvestorAbout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Investor About"
+                    />
+                <TextView
+                    android:id="@+id/txtInvestorExperience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/InvestorAbout"
+                    android:text="Experience"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/InvestorExperience"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Investor Experience"
+                    android:layout_below="@id/txtInvestorExperience"/>
+
+                <TextView
+                    android:id="@+id/txtInvestorEducation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/InvestorExperience"
+                    android:text="Investor Education"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/InvestorEducation"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Investor Education"
+                    android:layout_below="@id/txtInvestorEducation"/>
+
+                <TextView
+                    android:id="@+id/txtInvestorDomain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/InvestorEducation"
+                    android:text="Investor Domain"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/InvestorDomain"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Investor Education"
+                    android:layout_below="@id/txtInvestorDomain"/>
+
+                <TextView
+                    android:id="@+id/txtInvestorBudget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/InvestorDomain"
+                    android:text="Investor Budget"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/InvestorBudget"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Investor Education"
+                    android:layout_below="@id/txtInvestorBudget"/>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

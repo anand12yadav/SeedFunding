@@ -1,6 +1,7 @@
 package com.example.seedfunding.StartupAdapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import com.example.seedfunding.InvestorAdapter.investorNotificationAdapter;
 import com.example.seedfunding.InvestorModel.InvestorNotificationModel;
 import com.example.seedfunding.R;
+import com.example.seedfunding.ShowInvestorProfileFromNotificationActivity;
+import com.example.seedfunding.ShowStartupProfileFromNotificationActivity;
 import com.example.seedfunding.StartupModel.StartupNotificationModel;
 
 import java.util.List;
@@ -33,8 +36,23 @@ public class startupNotificationAdapter extends RecyclerView.Adapter<startupNoti
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        StartupNotificationModel Model=startupNotificationModel.get(i);
+        final StartupNotificationModel Model=startupNotificationModel.get(i);
         viewHolder.startup_notification_msg.setText(Model.getMessage());
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              //  Intent intent=new Intent(mContext, ShowStartupProfileFromNotificationActivity.class); ulta result
+             //   intent.putExtra("currentInvestorReceiverId",Model.getReceiver());
+              //  mContext.startActivity(intent);
+
+                Intent intent=new Intent(mContext, ShowInvestorProfileFromNotificationActivity.class);
+                 intent.putExtra("currentInvestorReceiverId",Model.getSender());
+                 mContext.startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override

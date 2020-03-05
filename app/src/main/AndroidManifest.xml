@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SendFundingInterestActivity"></activity>
+        <activity android:name=".ShowStartupProfileFromNotificationActivity"></activity>
+        <activity android:name=".ShowInvestorProfileFromNotificationActivity" />
+        <activity android:name=".SendFundingInterestActivity" />
         <activity android:name=".RequestFundingActivity" />
         <activity android:name=".StartupInfoSetupActivity" />
         <activity android:name=".InvestorInfoSetupActivity" />
